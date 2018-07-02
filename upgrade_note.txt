@@ -1,0 +1,26 @@
+cocos2dx-x core
+sửa RichText
+sửa FileUtils, thêm FileDecryptor
+
+[removed]//sửa ScriptCore -> load js android
+
+[HTML] audio/CCAudio.js
+[HTML] core/labelttf/CCLabelTTFCanvasRenderCmd.js
+[HTML] core/renderer/RendererWebGL.js ->fixed
+[HTML] CCProgressTimerWebGLRenderCmd.js
+[HTML] UIRichText.js
+[HTML] CCBoot.js
+[HTML] CCLoaders.js
+
+[JSB] fix ParticleSystemQuad
+
+//win32
+config project
+
+//android
+sửa TextField keyboard
+firebase notification
+
+//ios
+APNs notification
+ 

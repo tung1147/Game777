@@ -1,0 +1,8 @@
+ObfuscateScriptFilename=true
+ResourceFile=true
+Input=D:\Project\GameBai2\res\Game
+VersionFile=true
+EncryptTexture=true
+SecretKey=LDLD/izZN/B0OOXa7cBymQ==
+EncryptScript=true
+IgnoreMainJS=false

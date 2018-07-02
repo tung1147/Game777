@@ -1,0 +1,22 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 0,
+	"showFPS" : false,
+    "frameRate" : 60,
+    "noCache" : false,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "engineDir":"frameworks/cocos2d-html5",
+
+    "modules" : ["cocos2d"],
+
+    "jsList" : [
+        "src/jsb_quyetnd_action.js",
+        "src/jsb_quyetnd_socket.js",
+        "src/jsb_quyetnd_facebook_plugin.js",
+        "src/jsb_quyetnd_system_plugin.js",
+        "src/jsb_quyetnd_newui.js",
+        "src/LoadingScene.js"
+    ]
+}
