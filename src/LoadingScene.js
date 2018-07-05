@@ -50,29 +50,12 @@ var LoadingScene = cc.Scene.extend({
                 }
             }
         }, this);
-        this.scheduleUpdate();
-    },
-
-    onExit : function () {
-        this._super();
-        this.unscheduleUpdate();
-    },
-
-    update : function (dt) {
-        if(this._updateTitle){
-            this._updateTitle = false;
-            if(this._titleString){
-                this.title.setString(this._titleString);
-            }
-        }
     },
 
     onProcessStatus : function (status) {
         switch (status){
             case GameLaucherStatus.GetUpdate:
             {
-                this._titleString = "Đang kiểm tra phiên bản";
-                this._updateTitle = true;
                 break;
             }
             case GameLaucherStatus.TestVersion:
@@ -85,26 +68,22 @@ var LoadingScene = cc.Scene.extend({
             }
             case GameLaucherStatus.Updating:
             {
-                this._titleString = "Đang tải cập nhật";
-                this._updateTitle = true;
+                this.title.setString("Đang tải cập nhật");
                 break;
             }
             case GameLaucherStatus.UpdateFailure:
             {
-                this._titleString = "Cập nhật thất bại";
-                this._updateTitle = true;
+                this.title.setString("Cập nhật thất bại");
                 break;
             }
             case GameLaucherStatus.LoadResource:
             {
-                this._titleString = "Đang tải tài nguyên";
-                this._updateTitle = true;
+                this.title.setString("Đang tải tài nguyên");
                 break;
             }
             case GameLaucherStatus.LoadScript:
             {
-                this._titleString = "Đang vào game";
-                this._updateTitle = true;
+                this.title.setString("Đang vào game");
                 break;
             }
             case GameLaucherStatus.LoadAndroidExt:
@@ -120,9 +99,7 @@ var LoadingScene = cc.Scene.extend({
     },
 
     onLoadResourceProcess : function (current, target) {
-       // this._titleString = "Đang tải tài nguyên[" + current + "/" + target + "]";
-        this._titleString = "Đang tải tài nguyên["+ Math.round(current / target * 100) + "%]";
-        this._updateTitle = true;
+        this.title.setString("Đang tải tài nguyên[" + current + "/" + target + "]");
     },
 
     _formatBytesCount : function (bytes) {
@@ -141,7 +118,6 @@ var LoadingScene = cc.Scene.extend({
     },
 
     onUpdateDownloadProcess : function (current, target) {
-        this._titleString = "Đang tải cập nhật["  + this._formatBytesCount(current) + "/" + this._formatBytesCount(target) + "]";
-        this._updateTitle = true;
+        this.title.setString("Đang tải cập nhật[" + this._formatBytesCount(current) + "/" + this._formatBytesCount(target) + "]");
     }
 });
